@@ -5,9 +5,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/johnfercher/maroto/pkg/consts"
-	"github.com/johnfercher/maroto/pkg/pdf"
-	"github.com/johnfercher/maroto/pkg/props"
+	"github.com/tagatac/maroto/pkg/consts"
+	"github.com/tagatac/maroto/pkg/pdf"
+	"github.com/tagatac/maroto/pkg/props"
 )
 
 func main() {
@@ -47,7 +47,7 @@ func main() {
 		})
 		m.ColSpace(4)
 		m.Col(4, func() {
-			m.QrCode("https://github.com/johnfercher/maroto", props.Rect{
+			m.QrCode("https://github.com/tagatac/maroto", props.Rect{
 				Center:  true,
 				Percent: 75,
 			})
@@ -58,11 +58,11 @@ func main() {
 
 	m.Row(100, func() {
 		m.Col(12, func() {
-			_ = m.Barcode("https://github.com/johnfercher/maroto", props.Barcode{
+			_ = m.Barcode("https://github.com/tagatac/maroto", props.Barcode{
 				Center:  true,
 				Percent: 70,
 			})
-			m.Text("https://github.com/johnfercher/maroto", props.Text{
+			m.Text("https://github.com/tagatac/maroto", props.Text{
 				Size:  20,
 				Align: consts.Center,
 				Top:   65,

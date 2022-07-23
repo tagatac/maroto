@@ -17,6 +17,8 @@ type Fpdf interface {
 	AddPage()
 	AddPageFormat(orientationStr string, size gofpdf.SizeType)
 	AddSpotColor(nameStr string, c, m, y, k byte)
+	AddUTF8Font(familyStr, styleStr, fileStr string)
+	AddUTF8FontFromBytes(familyStr, styleStr string, utf8Bytes []byte)
 	AliasNbPages(aliasStr string)
 	ArcTo(x, y, rx, ry, degRotate, degStart, degEnd float64)
 	Arc(x, y, rx, ry, degRotate, degStart, degEnd float64, styleStr string)
@@ -183,7 +185,6 @@ type Fpdf interface {
 	Write(h float64, txtStr string)
 	WriteLinkID(h float64, displayStr string, linkID int)
 	WriteLinkString(h float64, displayStr, targetStr string)
-	AddUTF8Font(familyStr, styleStr, fileStr string)
 }
 
 type fpdf struct {
@@ -199,10 +200,6 @@ func NewWrapper(pdf *gofpdf.Fpdf) *fpdf {
 
 func (s fpdf) AddFont(familyStr, styleStr, fileStr string) {
 	s.Gofpdf.AddFont(familyStr, styleStr, fileStr)
-}
-
-func (s fpdf) AddUTF8Font(familyStr, styleStr, fileStr string) {
-	s.Gofpdf.AddUTF8Font(familyStr, styleStr, fileStr)
 }
 
 func (s fpdf) AddFontFromBytes(familyStr, styleStr string, jsonFileBytes, zFileBytes []byte) {
@@ -231,6 +228,14 @@ func (s fpdf) AddPageFormat(orientationStr string, size gofpdf.SizeType) {
 
 func (s fpdf) AddSpotColor(nameStr string, c, m, y, k byte) {
 	s.Gofpdf.AddSpotColor(nameStr, c, m, y, k)
+}
+
+func (s fpdf) AddUTF8Font(familyStr, styleStr, fileStr string) {
+	s.Gofpdf.AddUTF8Font(familyStr, styleStr, fileStr)
+}
+
+func (s fpdf) AddUTF8FontFromBytes(familyStr, styleStr string, utf8Bytes []byte) {
+	s.Gofpdf.AddUTF8FontFromBytes(familyStr, styleStr, utf8Bytes)
 }
 
 func (s fpdf) AliasNbPages(aliasStr string) {

@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/johnfercher/maroto/internal"
-	"github.com/johnfercher/maroto/internal/mocks"
-	"github.com/johnfercher/maroto/pkg/color"
-	"github.com/johnfercher/maroto/pkg/consts"
-	"github.com/johnfercher/maroto/pkg/props"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
+	"github.com/tagatac/maroto/internal"
+	"github.com/tagatac/maroto/internal/mocks"
+	"github.com/tagatac/maroto/pkg/color"
+	"github.com/tagatac/maroto/pkg/consts"
+	"github.com/tagatac/maroto/pkg/props"
 )
 
 func TestNewTableList(t *testing.T) {

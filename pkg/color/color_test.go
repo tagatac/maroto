@@ -3,8 +3,8 @@ package color_test
 import (
 	"testing"
 
-	"github.com/johnfercher/maroto/pkg/color"
 	"github.com/stretchr/testify/assert"
+	"github.com/tagatac/maroto/pkg/color"
 )
 
 func TestNewWhite(t *testing.T) {
